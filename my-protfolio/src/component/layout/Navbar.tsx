@@ -13,7 +13,6 @@ function Navbar() {
       <div className="hidden md:flex justify-end items-center h-14 -mt-14">
         <div className="flex justify-around text-xl w-1/2">
           <MenuItem title={"About"} />
-          <MenuItem title={"Education"} />
           <MenuItem title={"Skills"} />
           <MenuItem title={"Projects"} />
           <MenuItem title={"Contact"} />
