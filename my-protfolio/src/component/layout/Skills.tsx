@@ -1,6 +1,5 @@
 import React from 'react';
 import { skills } from '../../constants/skills';
-import Image from 'next/image';
 
 export default function Skills() {
   // Get animation class based on direction
@@ -57,10 +56,11 @@ export default function Skills() {
                   >
                     {/* Logo/Icon */}
                     <div className="w-12 h-12 mb-2 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                        <img 
-                       src={`/images/${skill.logo}`} // e.g. skill.logo = "react.png"
-                         alt={skill.name} 
-                         className="w-10 h-10 object-contain" 
+                       {/* eslint-disable-next-line @next/next/no-img-element */}
+                       <img
+                         src={`/images/${skill.logo}`} // e.g. skill.logo = "react.png"
+                         alt={skill.name}
+                         className="w-10 h-10 object-contain"
                        />
                       {/* Placeholder for actual logo - you can replace with actual images */}
                      

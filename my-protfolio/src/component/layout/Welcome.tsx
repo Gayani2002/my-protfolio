@@ -2,7 +2,6 @@
 
 import SocialMedia from "../static/SocialMedia"
 import Typing from "../static/Typing"
-import Image from "next/image"
 
 function Welcome() {
   return (
