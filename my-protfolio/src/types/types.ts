@@ -14,5 +14,6 @@ export type Project = {
   tech: string[]
   github: string
   image: string
+  status?: 'In Progress' | 'Completed' 
 }
 
