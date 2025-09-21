@@ -15,7 +15,7 @@ function Welcome() {
           {/* Heading */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Hi, I'm
+              Hi, I&apos;m
             </h1>
             
             {/* Typing Animation */}

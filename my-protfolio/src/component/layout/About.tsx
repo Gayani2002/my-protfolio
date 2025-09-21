@@ -14,7 +14,7 @@ function About() {
 
           <div className="max-w-5xl mx-auto space-y-6 mt-20">
             <p className="text-lg text-gray-300 leading-relaxed">
-              I'm an IT undergraduate at the University of Moratuwa with a strong 
+              I&apos;m an IT undergraduate at the University of Moratuwa with a strong 
               interest in software development and technology. I enjoy solving 
               problems through logical thinking and take pride in creating efficient, 
               practical solutions.
@@ -23,7 +23,7 @@ function About() {
               My academic journey has enhanced my critical thinking skills and taught 
               me how to approach tasks with clarity and creativity. I also value 
               teamwork and have gained experience working in collaborative environments 
-              where communication and shared effort lead to better outcomes. I'm always 
+              where communication and shared effort lead to better outcomes. I&apos;m always 
               eager to learn new tools, take on new challenges, and grow as a developer.
             </p>
 
