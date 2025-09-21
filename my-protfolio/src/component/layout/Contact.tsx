@@ -102,7 +102,7 @@ const Contact: React.FC<ContactProps> = ({ className = '' }) => {
            
             <div className="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
-              Have a project in mind or just want to say hello? I'd love to hear from you.
+              Have a project in mind or just want to say hello? I&apos;d love to hear from you.
             </p>
           </div>
 

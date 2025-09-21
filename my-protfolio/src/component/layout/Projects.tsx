@@ -8,16 +8,15 @@ import Image from "next/image";
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
+    const [isClient, setIsClient] = useState(false);
 
   // Update items per page based on screen size
   useEffect(() => {
     const updateItemsPerPage = () => {
-      if (typeof window !== "undefined") {
-        const width = window.innerWidth;
-        if (width >= 1280) setItemsPerPage(3); // xl
-        else if (width >= 768) setItemsPerPage(2); // md
-        else setItemsPerPage(1); // sm
-      }
+      const width = window.innerWidth;
+      if (width >= 1280) setItemsPerPage(3);
+      else if (width >= 768) setItemsPerPage(2);
+      else setItemsPerPage(1);
     };
 
     updateItemsPerPage();
@@ -55,7 +54,7 @@ export default function Projects() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-400 mb-4">Featured Projects</h2>
           <div className="w-20 h-1 bg-blue-400 mx-auto mb-4"></div>
           <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            Here are some of the projects I've worked on, showcasing my skills in full-stack development, UI/UX design,
+            Here are some of the projects I&apos;ve worked on, showcasing my skills in full-stack development, UI/UX design,
             and problem-solving.
           </p>
         </div>
