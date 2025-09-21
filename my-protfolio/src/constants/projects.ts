@@ -1,5 +1,5 @@
 import { Project } from '../types/types';
-import Image from "next/image";
+
 
 export const projects: Project[] = [
   {
