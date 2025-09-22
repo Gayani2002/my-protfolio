@@ -7,7 +7,7 @@ const SocialMedia = ({ size }: { size: number }) => {
       <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-300">
 
           <a
-          href="https://www.linkedin.com/in/gayani-madhubhashini-995781256/"
+          href="#Contact"
           className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-gray-500 transition-colors duration-300"
           aria-label="Gmail "
         >

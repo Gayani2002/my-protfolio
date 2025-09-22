@@ -35,7 +35,7 @@ export const skills: SkillsCategory = {
         },
          {
             name: 'JavaScript',
-            logo: 'JavaScript.png',
+            logo: 'Javascript.png',
             direction: 'left'
         },
         {
