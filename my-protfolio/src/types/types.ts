@@ -17,3 +17,10 @@ export type Project = {
   status?: 'In Progress' | 'Completed' 
 }
 
+export type Blog = {
+  title: string
+  description: string
+  link: string
+  image: string
+}
+

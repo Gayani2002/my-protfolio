@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { projects } from "../../constants/projects";
-import { Github, ChevronLeft, ChevronRight, Clock, CheckCircle } from "lucide-react";
+import { blogs } from "../../constants/blogs";
+import { ExternalLink, ChevronLeft, ChevronRight, Clock, CheckCircle } from "lucide-react";
 import Image from "next/image";
 
-export default function Projects() {
+export default function Blogs() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
-    const [isClient, setIsClient] = useState(false);
 
   // Update items per page based on screen size
   useEffect(() => {
@@ -26,13 +25,13 @@ export default function Projects() {
 
   // Reset current index when items per page changes
   useEffect(() => {
-    const maxIndex = Math.max(0, Math.ceil(projects.length / itemsPerPage) - 1);
+    const maxIndex = Math.max(0, Math.ceil(blogs.length / itemsPerPage) - 1);
     if (currentIndex > maxIndex) {
       setCurrentIndex(maxIndex);
     }
   }, [itemsPerPage, currentIndex]);
 
-  const totalPages = Math.ceil(projects.length / itemsPerPage);
+  const totalPages = Math.ceil(blogs.length / itemsPerPage);
   const canNavigate = totalPages > 1;
 
   const nextSlide = () => {
@@ -51,11 +50,10 @@ export default function Projects() {
     <section id="Projects" className="py-12 md:py-20 px-4 min-h-screen bg-gradient-to-r from-gray-900 via-gray-900 to-gray-800 text-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-400 mb-4">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-400 mb-4">Latest Blogs</h2>
           <div className="w-20 h-1 bg-blue-400 mx-auto mb-4"></div>
           <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            Here are some of the projects I&apos;ve worked on, showcasing my skills in full-stack development
-            and problem-solving.
+              Thoughts, ideas, and writings from my experiences and learning journey.
           </p>
         </div>
 
@@ -92,73 +90,48 @@ export default function Projects() {
                   key={pageIndex}
                   className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 px-2"
                 >
-                  {projects
+                  {blogs
                     .slice(pageIndex * itemsPerPage, (pageIndex + 1) * itemsPerPage)
-                    .map((project, projectIndex) => (
+                    .map((blog, blogIndex) => (
                       <div
-                        key={`${pageIndex}-${projectIndex}`}
+                        key={`${pageIndex}-${blogIndex}`}
                         className="group h-full"
                       >
                         <div className="h-full bg-gray-800 bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-lg md:rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500/50 hover:shadow-xl">
-                          <div className="aspect-video bg-gray-700 overflow-hidden relative">
+                          <div className="aspect-video bg-gray-700 relative h-56 overflow-hidden">
                             <Image
-                              src={project.image}
-                              alt={`${project.title} screenshot`}
+                              src={blog.image}
+                              alt={`${blog.title} `}
                               fill
                               className="object-cover group-hover:scale-105 transition-transform duration-500"
                               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-70" />
-                            
-                            <div className="absolute top-4 right-4">
-                              <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium  border ${
-                                project.status === 'Completed' 
-                                  ? 'bg-grey text-green-300 border-green-500/30' 
-                                  : 'bg-grey text-yellow-300 border-yellow-500/30'
-                              }`}>
-                                {project.status === 'Completed' ? (
-                                  <CheckCircle className="w-3 h-3" />
-                                ) : (
-                                  <Clock className="w-3 h-3" />
-                                )}
-                                {project.status}
-                              </div>
-                            </div>
-                            
-                         
                           </div>
 
                           <div className="p-6">
+                            {/* Blog title and description moved here from the image overlay */}
+                            <div className="mb-4">
+                              <h3 className="text-xl font-bold text-white mb-2 line-clamp-2">
+                                {blog.title}
+                              </h3>
+                              <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
+                                {blog.description}
+                              </p>
+                            </div>
 
-                    <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                        <div className="flex gap-2">
-                          {project.github !== "#" && (
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center px-3 py-1 text-sm bg-gray-700 hover:bg-gray-600 border border-gray-600 text-white rounded-md transition-colors"
-                            >
-                              <Github className="w-4 h-4" />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-
-                            <p className="text-sm leading-relaxed text-gray-300 mb-4">
-                              {project.description}
-                            </p>
-
-                            <div className="flex flex-wrap gap-2">
-                              {project.tech.map((tech, techIndex) => (
-                                <span
-                                  key={techIndex}
-                                  className="text-xs px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 hover:bg-blue-500/30 rounded-full transition-colors"
+                            <div className="flex items-center justify-between">
+                              {blog.link !== "#" && (
+                                <a
+                                  href={blog.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 transition-colors text-sm font-medium"
                                 >
-                                  {tech}
-                                </span>
-                              ))}
+                                  Read on Medium
+                                  <ExternalLink className="w-4 h-4" />
+                                </a>
+                              )}
                             </div>
                           </div>
                         </div>
