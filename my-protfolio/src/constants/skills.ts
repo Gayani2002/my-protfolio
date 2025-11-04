@@ -35,7 +35,7 @@ export const skills: SkillsCategory = {
         },
          {
             name: 'JavaScript',
-            logo: 'Javascript.png',
+            logo: 'JavaScript.png',
             direction: 'left'
         },
         {
@@ -51,6 +51,12 @@ export const skills: SkillsCategory = {
         }
     ],
     'Backend': [
+
+          {
+            name: 'Spring Boot',
+            logo: 'Spring Boot.png',
+            direction: 'right'
+        },
         {
             name: 'Node Js',
             logo: 'Node Js.png',
